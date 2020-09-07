@@ -12,7 +12,7 @@ client = commands.Bot(command_prefix = ".")
 async def on_ready():
     print(f"{client.user} is ready!")
 
-@client.command
+@client.command()
 async def hystats(ctx,mcuser):
     async with aiohttp.ClientSession() as cs:
         async with cs.get('https://api.slothpixel.me/api/players/{mcuser}') as r:
