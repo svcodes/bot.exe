@@ -15,7 +15,7 @@ async def on_ready():
 @client.command()
 async def hystats(ctx,mcuser):
     async with aiohttp.ClientSession() as cs:
-        async with cs.get('https://api.slothpixel.me/api/players/{mcuser}') as r:
+        async with cs.get(f'https://api.slothpixel.me/api/players/{mcuser}') as r:
             res = await r.json()  # returns dict
             await ctx.send(res['total_coins'])
     
