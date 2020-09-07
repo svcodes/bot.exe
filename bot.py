@@ -15,9 +15,9 @@ async def on_ready():
 @client.command
 async def hystats(ctx,mcuser):
     async with aiohttp.ClientSession() as cs:
-    async with cs.get('https://api.slothpixel.me/api/players/{mcuser}') as r:
-        res = await r.json()  # returns dict
-        await ctx.send(res['total_coins'])
+        async with cs.get('https://api.slothpixel.me/api/players/{mcuser}') as r:
+            res = await r.json()  # returns dict
+            await ctx.send(res['total_coins'])
     
 #basic ping command
 @client.command(brief = "Tells you the ping in ms", description = "Tells you the time to connect from idiot.exes pc to the discord server (in ms)")
