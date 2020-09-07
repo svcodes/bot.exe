@@ -1,7 +1,7 @@
 # obtain proper libraries for hypixel stats and discord.py
 import discord
 from discord.ext import commands
-
+import aiohttp
 
 #initialize discord.py and hypixel api
 client = commands.Bot(command_prefix = ".")
