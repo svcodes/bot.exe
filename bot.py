@@ -7,6 +7,15 @@ from discord.ext import commands
 client = commands.Bot(command_prefix = ".")
 
 
+@client.command()
+async def hystats(ctx,mcuser):
+    async with aiohttp.ClientSession() as cs:
+        async with cs.get(f'https://api.slothpixel.me/api/players/{mcuser}') as r:
+            res = await r.json()  # returns dict
+            await ctx.send(res['total_coins'])
+
+
+
 #sends a message to the console when the bot is connected
 @client.event
 async def on_ready():
@@ -52,17 +61,6 @@ async def sbprof(ctx,mcname):
 #uses hypixel.py to show the rank and network level of a user
 
 
-@client.event
-async def on_message(message):
-    if message.content.startswith('$greet'):
-        channel = message.channel
-        await channel.send('Say hello!')
-
-        def check(m):
-            return m.content == 'hello' and m.channel == channel
-
-        msg = await client.wait_for('message', check=check)
-        await channel.send('Hello {.author}!'.format(msg))
 
 
 
@@ -73,18 +71,6 @@ async def basement(ctx):
     basement_role = myguild.get_role(744013188911071362)
 
     await ctx.author.add_roles(basement_role)
-
-@client.event
-async def on_message(message):
-    if message.content.startswith('$echo'):
-        channel = message.channel
-        await channel.send('say something')
-
-        def check (m):
-            return m.author != client.user and m.author == message.author
-
-        msg = await client.wait_for('message')
-        await channel.send(msg.content)
 
 
 
