@@ -43,15 +43,7 @@ async def website(ctx):
 async def brr(ctx):
     await ctx.send("https://i.clouds.tf/hys8/7nvo.png")
 
-#tells you if you have nitro idk why i made this
-@client.command()
-async def nitro(ctx):
-    user = await client.fetch_user_profile(ctx.author.id)
-    
-    if user.premium_since == None:
-        await ctx.send("you do not have nitro")
-    else:
-        await ctx.send("you have nitro")
+
 
 #links the rrdragonorchestra instagram
 @client.command()
