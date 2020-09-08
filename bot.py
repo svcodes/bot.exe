@@ -2,9 +2,15 @@
 import discord
 from discord.ext import commands
 import aiohttp
+import asyncpraw
+import random
 
 #initialize discord.py and hypixel api
 client = commands.Bot(command_prefix = ".")
+
+reddit = asyncpraw.Reddit(client_id="CIwP1eILd2pKNA",
+                     client_secret="eEMVLkXCyLD4mXC9QHjDMIWedEI",
+                     user_agent="script: Python (by /u/thesumonster)")
 
 
 @client.command()
@@ -58,8 +64,11 @@ async def instagram(ctx):
 async def sbprof(ctx,mcname):
     await ctx.send(f"https://sky.lea.moe/stats/{mcname}")
 
-#uses hypixel.py to show the rank and network level of a user
-
+@client.command()
+async def meme(ctx):
+    memesubs = ["memes","dankmemes"]
+    submission = await reddit.subreddit(random.choice(memesubs)).random()
+    await ctx.send(submission.url)
 
 
 
