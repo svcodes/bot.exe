@@ -46,7 +46,7 @@ async def brr(ctx):
 #tells you if you have nitro idk why i made this
 @client.command()
 async def nitro(ctx):
-    user = ctx.author
+    user = client.get_user(ctx.author.id)
     
     if user.premium_since == None:
         await ctx.send("you do not have nitro")
