@@ -68,7 +68,7 @@ async def sbprof(ctx,mcname):
 async def meme(ctx):
     memesubs = ["memes","dankmemes"]
     subreddit = await reddit.subreddit(random.choice(memesubs))
-    submision = subreddit.random()
+    submission = await subreddit.random()
     await ctx.send(submission.url)
 
 
