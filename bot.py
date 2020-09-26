@@ -43,7 +43,12 @@ async def website(ctx):
 async def brr(ctx):
     await ctx.send("https://i.clouds.tf/hys8/7nvo.png")
 
-
+@client.command()
+async def poll(ctx, *, question):
+  pogmessage = await ctx.send(f"{ctx.author.name} asks: {question})
+  await pogmessage.add_reaction(":thumbsup:")
+  await pogmessage.add_reaction(":thumbsdown:")
+                              
 
 #links the rrdragonorchestra instagram
 @client.command()
