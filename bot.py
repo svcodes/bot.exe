@@ -46,8 +46,8 @@ async def brr(ctx):
 @client.command()
 async def poll(ctx, *, question):
   pogmessage = await ctx.send(f"{ctx.author.name} asks: {question}")
-  await pogmessage.add_reaction(":thumbsup:")
-  await pogmessage.add_reaction(":thumbsdown:")
+  await pogmessage.add_reaction("\U0001f44d")
+  await pogmessage.add_reaction("\U0001f44e")
                               
 
 #links the rrdragonorchestra instagram
