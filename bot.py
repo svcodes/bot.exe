@@ -33,10 +33,6 @@ async def on_ready():
 async def ping(ctx):
     await ctx.send(f"pong! {round(client.latency * 1000, 4)} ms")
 
-#orchestra website command that mentions the sender
-@client.command(brief = "links the orchestra website", description = "links the orchestra website")
-async def website(ctx):
-    await ctx.send(f"{ctx.author.mention} https://sites.google.com/a/roundrockisd.org/round-rock-high-dragon-orchestra/")
 
 #funny meme command
 @client.command(brief = "haha brrr go brrrr", description = "brrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr")
@@ -50,11 +46,6 @@ async def poll(ctx, *, question):
   await pogmessage.add_reaction("\U0001f44e")
                               
 
-#links the rrdragonorchestra instagram
-@client.command()
-async def instagram(ctx):
-    await ctx.send(f"{ctx.author.mention} https://instagram.com/rrdragonorchestra")
-    
 
 #links the skyleamoe page for a given user
 @client.command()
@@ -70,14 +61,6 @@ async def meme(ctx):
 
 
 
-
-@client.command()
-async def basement(ctx):
-    myguild = client.get_guild(733508936216477706)
-
-    basement_role = myguild.get_role(744013188911071362)
-
-    await ctx.author.add_roles(basement_role)
 
 
 
