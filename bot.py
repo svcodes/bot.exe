@@ -54,11 +54,13 @@ async def sbprof(ctx,mcname):
 
 @client.command()
 async def meme(ctx):
-    memesubs = ["memes","dankmemes"]
-    subreddit = await reddit.subreddit(random.choice(memesubs))
-    stuff = subreddit.hot(limit=10)
-    for i in range(stuff):
-      await print(i.url)
+   postnum = random.randint(1,100)
+   subnum = 1 
+   for submission in reddit.subreddit("memes").hot(limit=100):
+    if subnum == postnum:
+      print(submission.url)
+    else:
+      subnum += 1
 
 
 
