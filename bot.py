@@ -57,7 +57,7 @@ async def meme(ctx):
     memesubs = ["memes","dankmemes"]
     subreddit = await reddit.subreddit(random.choice(memesubs))
     stuff = subreddit.hot(limit=10)
-    await ctx.send(stuff)
+    print(stuff)
 
 
 
