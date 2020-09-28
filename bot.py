@@ -56,7 +56,8 @@ async def sbprof(ctx,mcname):
 async def meme(ctx):
    postnum = random.randint(1,100)
    subnum = 1 
-   for submission in reddit.subreddit("memes").hot(limit=100):
+   sub = await reddit.subreddit("memes").hot(limit=100)
+   for submission in sub:
     if subnum == postnum:
       print(submission.url)
     else:
