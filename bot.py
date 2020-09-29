@@ -33,9 +33,9 @@ async def profile(ctx,username):
                 await ctx.send("error! you either entered the name wrong/gdbrowser api is down. try again later")
             else:
                 embed = discord.Embed(title = f"GD Stats for {res['username']}")
-                embed.add_field(name = stars, value = res['stars'])
-                embed.add_field(name = coins, value = res['coins'])
-                embed.add_field(name = demons, value = res['demons'])
+                embed.add_field(name = 'stars', value = res['stars'])
+                embed.add_field(name = 'coins', value = res['coins'])
+                embed.add_field(name = 'demons', value = res['demons'])
                 await ctx.send(embed=embed)
 
     
