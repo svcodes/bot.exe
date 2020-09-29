@@ -27,15 +27,19 @@ async def gd(ctx):
 @gd.command()
 async def profile(ctx,username):
     async with aiohttp.ClientSession() as cs:
-        async with cs.get(f'https://gdbrowser.com/api/profile/{username}') as r:
-            res = await r.json()  # returns dict
+        headers = {'content-type':'application/json'}
+        async with cs.get(f'https://gdbrowser.com/api/profile/{username}',headers=headers) as r:
+            res = await r.json()
+              
             if res == "-1":
                 await ctx.send("error! you either entered the name wrong/gdbrowser api is down. try again later")
             else:
                 embed = discord.Embed(title = f"GD Stats for {res['username']}")
-                embed.add_field(name = 'stars', value = res['stars'])
-                embed.add_field(name = 'coins', value = res['coins'])
-                embed.add_field(name = 'demons', value = res['demons'])
+                embed.set_thumbnail(f'https://gdbrowser.com/icon/{username}')
+                embed.add_field(name = 'Stars', value = res['stars'], inline=False)
+                embed.add_field(name = 'Coins', value = res['coins'],inline=False)
+                embed.add_field(name = 'Demons', value = res['demons'],inline=False)
+                embed.set_footer(text="All info is obtained from https://gdbrowser.com")
                 await ctx.send(embed=embed)
 
     
