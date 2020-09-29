@@ -27,7 +27,7 @@ async def gd(ctx):
 @gd.command()
 async def profile(ctx,username):
     async with aiohttp.ClientSession() as cs:
-        async with cs.get(f'https://api.slothpixel.me/api/players/{mcuser}') as r:
+        async with cs.get(f'https://gdbrowser.com/api/profile/{username}') as r:
             res = await r.json()  # returns dict
             if res == "-1":
                 await ctx.send("error! you either entered the name wrong/gdbrowser api is down. try again later")
