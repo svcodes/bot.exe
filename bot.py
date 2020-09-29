@@ -44,12 +44,13 @@ async def profile(ctx,username):
 async def level(ctx, id: int):
     async with client.session.get(f'https://gdbrowser.com/api/level/{id}') as r:
         res = await r.json()
-        embed = discord.Embed(title = f'GD Level: {res['name']})
+        embed = discord.Embed(title = f"GD Level: {res['name']}")
         embed.add_field(name="Author", value = res['author'],inline=False)
         embed.add_field(name="Difficulty", value = res['difficulty'],inline=False)
         embed.add_field(name="Downloads", value = res['downloads'],inline=False)
         embed.add_field(name="Stars", value = res['10'],inline=False)
         embed.add_field(name="Song Name", value = res['songName'],inline=False)
+        await ctx.send(embed=embed)
 
     
 @client.command()
