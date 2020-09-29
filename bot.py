@@ -44,10 +44,10 @@ async def profile(ctx,username):
     
 @client.command()
 async def dadjoke(ctx):
-    headers = {'Content-Type': 'application/json'}
-    async with client.session.get(url='https://icanhazdadjoke.com',headers=headers) as r:
+    
+    async with client.session.get(url='https://icanhazdadjoke.com/slack') as r:
         res = await r.json()
-        await ctx.send(res['joke'])
+        await ctx.send(res['attachments']['text'])
 
 
 
