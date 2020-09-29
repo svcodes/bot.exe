@@ -40,6 +40,16 @@ async def profile(ctx,username):
                 embed.add_field(name = 'Demons', value = res['demons'],inline=False)
                 embed.set_footer(text="All info is obtained from https://gdbrowser.com")
                 await ctx.send(embed=embed)
+@gd.command()
+async def level(ctx, id: int):
+    async with client.session.get(f'https://gdbrowser.com/api/level/{id}') as r:
+        res = await r.json()
+        embed = discord.Embed(title = f'GD Level: {res['name']}'')
+        embed.add_field(name="Author", value = res['author'],inline=False)
+        embed.add_field(name="Difficulty", value = res['difficulty'],inline=False)
+        embed.add_field(name="Downloads", value = res['downloads'],inline=False)
+        embed.add_field(name="Stars", value = res['10'],inline=False)
+        embed.add_field(name="Song Name", value = res['songName'],inline=False)
 
     
 @client.command()
