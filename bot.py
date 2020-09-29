@@ -20,6 +20,26 @@ async def hystats(ctx,mcuser):
             res = await r.json()  # returns dict
             await ctx.send(res['total_coins'])
 
+@client.group
+async def gd(ctx):
+    if ctx.invoked_subcommand is None:
+        await ctx.send("Please add a subcommand! (profile, level)")
+@gd.command()
+async def profile(ctx,username):
+    async with aiohttp.ClientSession() as cs:
+        async with cs.get(f'https://api.slothpixel.me/api/players/{mcuser}') as r:
+            res = await r.json()  # returns dict
+            if res == "-1":
+                await ctx.send("error! you either entered the name wrong/gdbrowser api is down. try again later")
+            else:
+                embed = discord.embed(title = f"GD Stats for {res['username']}")
+                embed.add_field(name = stars, value = res['stars'])
+                embed.add_field(name = coins, value = res['coins'])
+                embed.add_field(name = demons, value = res['demons'])
+                await ctx.send(embed=embed)
+
+    
+
 
 
 #sends a message to the console when the bot is connected
