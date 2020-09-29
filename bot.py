@@ -20,7 +20,7 @@ async def hystats(ctx,mcuser):
             res = await r.json()  # returns dict
             await ctx.send(res['total_coins'])
 
-@client.group
+@client.group()
 async def gd(ctx):
     if ctx.invoked_subcommand is None:
         await ctx.send("Please add a subcommand! (profile, level)")
