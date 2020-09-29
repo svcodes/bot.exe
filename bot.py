@@ -41,8 +41,8 @@ async def brr(ctx):
 
 @client.command()
 async def poll(ctx, *, question):
-  pollembed = discord.Embed(title= question)
-  pollembed.set_author(name=ctx.author.name)
+  pollembed = discord.Embed(title= question, colour = discord.Colour(0x7289da))
+  pollembed.set_author(name=f"{ctx.author.name} asks: )
   pogmessage = await ctx.send(embed=pollembed)
   await pogmessage.add_reaction("\U0001f44d")
   await pogmessage.add_reaction("\U0001f44e")
