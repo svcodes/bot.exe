@@ -43,7 +43,7 @@ async def brr(ctx):
 async def poll(ctx, *, question):
   pollembed = discord.Embed(title= question)
   pollembed.set_author(name=ctx.author.name)
-  pogmessage = await ctx.send(embed=embed)
+  pogmessage = await ctx.send(embed=pollembed)
   await pogmessage.add_reaction("\U0001f44d")
   await pogmessage.add_reaction("\U0001f44e")
                               
