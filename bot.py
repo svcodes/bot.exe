@@ -47,7 +47,7 @@ async def dadjoke(ctx):
     
     async with client.session.get(url='https://icanhazdadjoke.com/slack') as r:
         res = await r.json()
-        await ctx.send(res)
+        await ctx.send(res[0]['text'])
 
 
 
