@@ -5,18 +5,19 @@ import aiohttp
 import asyncpraw
 import random
 
-#initialize discord.py and hypixel api
+#initialize stuff
 client = commands.Bot(command_prefix = ".")
 
 reddit = asyncpraw.Reddit(client_id="CIwP1eILd2pKNA",
                      client_secret="eEMVLkXCyLD4mXC9QHjDMIWedEI",
                      user_agent="script: Python (by /u/thesumonster)")
 
+client.session = aiohttp.ClientSession()
+
 
 @client.command()
 async def hystats(ctx,mcuser):
-    async with aiohttp.ClientSession() as cs:
-        async with cs.get(f'https://api.slothpixel.me/api/players/{mcuser}') as r:
+        async with client.session.get(f'https://api.slothpixel.me/api/players/{mcuser}') as r:
             res = await r.json()  # returns dict
             await ctx.send(res['total_coins'])
 
@@ -26,9 +27,7 @@ async def gd(ctx):
         await ctx.send("Please add a subcommand! (profile, level)")
 @gd.command()
 async def profile(ctx,username):
-    async with aiohttp.ClientSession() as cs:
-        headers = {'content-type':'application/json'}
-        async with cs.get(url = f'https://gdbrowser.com/api/profile/{username}',headers=headers) as r:
+        async with client.session.get(url = f'https://gdbrowser.com/api/profile/{username}') as r:
             res = await r.json()
               
             if res == "-1":
@@ -43,6 +42,12 @@ async def profile(ctx,username):
                 await ctx.send(embed=embed)
 
     
+@client.command()
+async def dadjoke(ctx):
+    headers = {'Content-Type': 'application/json'}
+    async with client.session.get(url='https://icanhazdadjoke.com',headers=headers) as r:
+        res = await r.json()
+        await ctx.send(res['joke'])
 
 
 
