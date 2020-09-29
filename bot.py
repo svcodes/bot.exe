@@ -48,7 +48,7 @@ async def level(ctx, id: int):
         embed.add_field(name="Author", value = res['author'],inline=False)
         embed.add_field(name="Difficulty", value = res['difficulty'],inline=False)
         embed.add_field(name="Downloads", value = res['downloads'],inline=False)
-        embed.add_field(name="Stars", value = res['10'],inline=False)
+        embed.add_field(name="Stars", value = res['stars'],inline=False)
         embed.add_field(name="Song Name", value = res['songName'],inline=False)
         await ctx.send(embed=embed)
 
