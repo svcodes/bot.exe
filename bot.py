@@ -51,17 +51,19 @@ async def level(ctx, id: int):
         embed.add_field(name="Stars", value = res['stars'],inline=False)
         embed.add_field(name="Song Name", value = res['songName'],inline=False)
         await ctx.send(embed=embed)
+
 @client.command()
 async def mcserver(ctx,ip):
     async with client.session.get(f'https://api.mcsrvstat.us/2/{ip}') as r:
         res = await r.json()
         embed = discord.Embed(title = f"Server Stats for {res['hostname']}")
-        embed.description(f"""**MOTD:** {res['motd']['clean'][0]}
+        embed.description = (f"""**MOTD:** {res['motd']['clean'][0]}
         {res['motd']['clean'][1]}
         **Players:** {res['players']['online']}/{res['players']['max']}
         **Version:** {res['version']}""")
       
         await ctx.send(embed=embed)
+        
 
     
 @client.command()
