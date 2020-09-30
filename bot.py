@@ -56,8 +56,10 @@ async def mcserver(ctx,ip):
     async with client.session.get(f'https://api.mcsrvstat.us/2/{ip}') as r:
         res = await r.json()
         embed = discord.Embed(title = f"Server Stats for {res['hostname']}")
-        embed.description("""
-        """)
+        embed.description(f"""**MOTD:** {res['clean']['0']}
+        {res['clean']['1']}
+        **Players:** {res['players']['online']}/{res['players']['max']}
+        **Version:** {res['version']}""")
       
         await ctx.send(embed=embed)
 
