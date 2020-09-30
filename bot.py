@@ -91,8 +91,11 @@ async def poll(ctx, *, question):
 
 #links the skyleamoe page for a given user
 @client.command()
-async def sbprof(ctx,mcname):
-    await ctx.send(f"https://sky.lea.moe/stats/{mcname}")
+async def sbprof(ctx,mcname,profile = None):
+    if profile = None:
+        await ctx.send(f"https://sky.shiiyu.moe/stats/{mcname}")
+    else:
+        await ctx.send(f'https://sky.shiiyu.moe/stats/{mcname}/{profile}')
 
 @client.command()
 async def meme(ctx):
