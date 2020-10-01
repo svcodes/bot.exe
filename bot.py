@@ -11,6 +11,7 @@ client = commands.Bot(command_prefix = ".")
 reddit = asyncpraw.Reddit(client_id="CIwP1eILd2pKNA",
                      client_secret="eEMVLkXCyLD4mXC9QHjDMIWedEI",
                      user_agent="script: Python (by /u/thesumonster)")
+client.load_extension("jishaku")
 
 client.session = aiohttp.ClientSession()
 
