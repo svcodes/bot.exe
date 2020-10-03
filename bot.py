@@ -55,7 +55,7 @@ async def level(ctx, id: int):
 
 @client.command()
 async def mcserver(ctx,ipaddr):
-    async with client.session.get(f'https://api.mcsrvstat.us/2/{ip}') as r:
+    async with client.session.get(f'https://api.mcsrvstat.us/2/{ipaddr}') as r:
         res = await r.json()
         embed = discord.Embed(title = f"Server Stats for {ipaddr}")
         motdpath = res['motd']['clean']
