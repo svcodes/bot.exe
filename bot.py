@@ -15,6 +15,11 @@ client.load_extension("jishaku")
 
 client.session = aiohttp.ClientSession()
 
+@client.command()
+async def on_message(message):
+   if ctx.guild.id == 733508936216477706 && message.content.lower == "bye":
+      await message.add_reaction("\U0001f44b")
+      await client.process_commands(message)
 
 @client.command()
 async def hystats(ctx,mcuser):
