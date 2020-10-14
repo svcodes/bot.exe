@@ -17,7 +17,7 @@ client.session = aiohttp.ClientSession()
 
 @client.command()
 async def on_message(message):
-   if ctx.guild.id == 733508936216477706 and message.content.lower == "bye":
+   if message.guild.id == 733508936216477706 and message.content.lower == "bye":
       await message.add_reaction("\U0001f44b")
       await client.process_commands(message)
 
