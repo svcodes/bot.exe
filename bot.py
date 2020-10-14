@@ -15,7 +15,7 @@ client.load_extension("jishaku")
 
 client.session = aiohttp.ClientSession()
 
-@client.command()
+@client.event
 async def on_message(message):
    if message.guild.id == 733508936216477706 and message.content.lower == "bye":
       await message.add_reaction("\U0001f44b")
