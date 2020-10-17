@@ -24,6 +24,8 @@ async def on_message(message):
       await message.add_reaction("\U0001f44b")
    if message.author.id == 743162094710423572:
       await message.add_reaction("\U0001f60b")
+   if message.author.id == 348149669899272196:
+      await message.add_reaction("\U0001f633")
    
    await client.process_commands(message)
 
@@ -125,6 +127,7 @@ async def poll(ctx, *, question):
   pogmessage = await ctx.send(embed=pollembed)
   await pogmessage.add_reaction("\U0001f44d")
   await pogmessage.add_reaction("\U0001f44e")
+  await pogmessage.add_reaction("\U0001f90f")
                               
 
 
