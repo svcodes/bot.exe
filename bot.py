@@ -4,6 +4,7 @@ from discord.ext import commands
 import aiohttp
 import asyncpraw
 import random
+import ksoftapi
 
 #initialize stuff
 client = commands.Bot(command_prefix = ".")
@@ -14,6 +15,8 @@ reddit = asyncpraw.Reddit(client_id="CIwP1eILd2pKNA",
 client.load_extension("jishaku")
 
 client.session = aiohttp.ClientSession()
+kclient = ksoftapi.Client("695cb5adaf19999c1e66774ea03d241fe4f6a3ee")
+
 
 @client.event
 async def on_message(message):
@@ -89,6 +92,10 @@ async def dadjoke(ctx):
         res = await r.json()
         await ctx.send(res['attachments'][0]['text'])
 
+@client.command()
+async def testmeme():
+    meme = await kclient.images.random_meme()
+    await ctx.send(meme[2])
 
 
 #sends a message to the console when the bot is connected
