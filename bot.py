@@ -78,6 +78,7 @@ async def mcserver(ctx,ipaddr):
             embed.description = (f"""**MOTD:** 
             {res['motd']['clean'][0]}
             **Players:** {res['players']['online']}/{res['players']['max']}
+            
             **Version:** {res['version']}""")
 
       
@@ -93,7 +94,7 @@ async def dadjoke(ctx):
         await ctx.send(res['attachments'][0]['text'])
 
 @client.command()
-async def testmeme():
+async def testmeme(ctx):
     meme = await kclient.images.random_meme()
     await ctx.send(meme[2])
 
