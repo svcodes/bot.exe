@@ -78,7 +78,7 @@ async def mcserver(ctx,ipaddr):
             embed.description = (f"""**MOTD:** 
             {res['motd']['clean'][0]}
             **Players:** {res['players']['online']}/{res['players']['max']}
-            
+
             **Version:** {res['version']}""")
 
       
@@ -96,7 +96,7 @@ async def dadjoke(ctx):
 @client.command()
 async def testmeme(ctx):
     meme = await kclient.images.random_meme()
-    await ctx.send(meme[2])
+    await ctx.send(meme.image_url)
 
 
 #sends a message to the console when the bot is connected
