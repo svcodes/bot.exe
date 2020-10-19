@@ -90,7 +90,8 @@ async def mcserver(ctx,ipaddr):
         
 @client.command()
 async def coinflip(ctx):
-    await ctx.send(f"It's {random.choice(["Heads","Tails"])}!")
+    options = ["Heads","Tails"]
+    await ctx.send(f"It's {random.choice(options)}!")
     
 @client.command()
 async def dadjoke(ctx):
