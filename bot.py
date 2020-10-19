@@ -105,7 +105,7 @@ async def pograte(ctx, user: discord.Member = None):
     if user == None:
       await ctx.send(f"{ctx.author.display_name} is {random.randint(1,100)}% pog.")
     else:
-      await ctx.send(f"{user.display_name} is {random.randint(1,100)% pog.")
+      await ctx.send(f"{user.display_name} is {random.randint(1,100)}% pog.")
 @client.command()
 async def testmeme(ctx):
     meme = await kclient.images.random_meme()
