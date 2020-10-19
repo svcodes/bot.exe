@@ -7,7 +7,9 @@ import random
 import ksoftapi
 
 #initialize stuff
-client = commands.Bot(command_prefix = ".")
+intents = discord.Intents.default()
+intents.members = True
+client = commands.Bot(command_prefix = ".", intents = intents)
 
 reddit = asyncpraw.Reddit(client_id="CIwP1eILd2pKNA",
                      client_secret="eEMVLkXCyLD4mXC9QHjDMIWedEI",
