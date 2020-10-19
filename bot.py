@@ -24,7 +24,7 @@ async def on_message(message):
       await message.add_reaction("\U0001f44b")
    if message.author.id == 743162094710423572:
       await message.add_reaction("\U0001f60b")
-   if message.author.id == 348149669899272196:
+   if message.author.id == 348149669899272196 and "." in message.content.lower():
       await message.add_reaction("\U0001f633")
    
    await client.process_commands(message)
@@ -88,7 +88,9 @@ async def mcserver(ctx,ipaddr):
       
         await ctx.send(embed=embed)
         
-
+@client.command()
+async def coinflip(ctx):
+    await ctx.send(f"It's {random.choice(["Heads","Tails"])}!")
     
 @client.command()
 async def dadjoke(ctx):
