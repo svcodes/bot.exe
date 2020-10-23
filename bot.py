@@ -39,7 +39,7 @@ async def suggest(ctx, suggestion):
   
   if ctx.guild.id == 693891574609739777:
       embed = discord.Embed(title = "Suggestion", description=suggestion)
-      await embed.set_author(name=f"{ctx.author.name}#{ctx.author.discrim}", icon_url = str(ctx.author.avatar_url))
+      await embed.set_author(name=f"{ctx.author.name}#{ctx.author.discriminator}", icon_url = str(ctx.author.avatar_url))
       chan = 740011566501724171
       msg = await chan.send(embed=embed)
       await msg.add_reaction("\U00002b06")
