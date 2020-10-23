@@ -35,6 +35,25 @@ async def on_message(message):
    await client.process_commands(message)
 
 @client.command()
+async def suggest(ctx, suggestion):
+  
+  if ctx.guild.id == 693891574609739777:
+      embed = discord.Embed(title = "Suggestion", description=suggestion)
+      await embed.set_author(name=f"{ctx.author.name}#{ctx.author.discrim}", icon_url = str(ctx.author.avatar_url))
+      msg = await ctx.send(embed=embed)
+      await msg.add_reaction("\U00002b06")
+      await mgs.add_reaction("\U00002b07")
+  elif ctx.guild.id == 733508936216477706:
+      embed = discord.Embed(title = "Suggestion", description=suggestion)
+      await embed.set_author(name=f"{ctx.author.name}#{ctx.author.discrim}", icon_url = str(ctx.author.avatar_url))
+      msg = await ctx.send(embed=embed)
+      await msg.add_reaction("\U00002b06")
+      await mgs.add_reaction("\U00002b07")
+  else:
+      await ctx.send("no")
+    
+    
+@client.command()
 async def hystats(ctx,mcuser):
         async with client.session.get(f'https://api.slothpixel.me/api/players/{mcuser}') as r:
             res = await r.json()  # returns dict
