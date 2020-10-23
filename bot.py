@@ -46,7 +46,7 @@ async def suggest(ctx, suggestion):
       await mgs.add_reaction("\U00002b07")
   elif ctx.guild.id == 733508936216477706:
       embed = discord.Embed(title = "Suggestion", description=suggestion)
-      await embed.set_author(name=f"{ctx.author.name}#{ctx.author.discriminator}", icon_url = str(ctx.author.avatar_url))
+      embed.set_author(name=f"{ctx.author.name}#{ctx.author.discriminator}", icon_url = str(ctx.author.avatar_url))
       chan = 735619559318487123
       msg = await chan.send(embed=embed)
       await msg.add_reaction("\U00002b06")
