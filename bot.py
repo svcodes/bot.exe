@@ -40,14 +40,14 @@ async def suggest(ctx, suggestion):
   if ctx.guild.id == 693891574609739777:
       embed = discord.Embed(title = "Suggestion", description=suggestion)
       embed.set_author(name=f"{ctx.author.name}#{ctx.author.discriminator}", icon_url = str(ctx.author.avatar_url))
-      chan = 740011566501724171
+      chan = client.get_channel(740011566501724171)
       msg = await chan.send(embed=embed)
       await msg.add_reaction("\U00002b06")
       await mgs.add_reaction("\U00002b07")
   elif ctx.guild.id == 733508936216477706:
       embed = discord.Embed(title = "Suggestion", description=suggestion)
       embed.set_author(name=f"{ctx.author.name}#{ctx.author.discriminator}", icon_url = str(ctx.author.avatar_url))
-      chan = 735619559318487123
+      chan = client.get_channel(735619559318487123)
       msg = await chan.send(embed=embed)
       await msg.add_reaction("\U00002b06")
       await mgs.add_reaction("\U00002b07")
