@@ -35,7 +35,7 @@ async def on_message(message):
    await client.process_commands(message)
 
 @client.command()
-async def suggest(ctx, suggestion):
+async def suggest(ctx,*,suggestion):
   
   if ctx.guild.id == 693891574609739777:
       embed = discord.Embed(title = "Suggestion", description=suggestion)
