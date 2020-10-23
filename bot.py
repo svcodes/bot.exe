@@ -178,19 +178,18 @@ async def sbprof(ctx,mcname,profile = None):
         await ctx.send(f'https://sky.shiiyu.moe/stats/{mcname}/{profile}')
 
 @client.command()
-async def meme(ctx):
-   postnum = random.randint(1,100)
-   subnum = 1 
-   sub = await reddit.subreddit("memes").hot(limit=100)
-   for submission in sub:
-    if subnum == postnum:
-      print(submission.url)
-    else:
-      subnum += 1
-
-
-
-
+async def gn(ctx, user : discord.Member = None):
+  if user == None:
+    await ctx.send(f"{ctx.author.name} says goodnight")
+  else:
+    await ctx.send(f"{ctx.author.name} says goodnight to {user.name}")
+    
+@client.command()
+async def gm(ctx, user : discord.Member = None):
+  if user == None:
+    await ctx.send(f"{ctx.author.name} says good morning")
+  else:
+    await ctx.send(f"{ctx.author.name} says good morning to {user.name}")
 
 
 
