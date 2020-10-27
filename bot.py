@@ -65,14 +65,9 @@ async def hystats(ctx,mcuser):
 
 @client.command()
 async def aww(ctx):
-    async with client.session.get(url="https://reddit.com/r/aww/random.json") as r:
-        data = await r.json()
-        await ctx.send(data[0]['data']['children'][0]['data']['url_overridden_by_dest'])
-          
-@client.command()
-async def awew(ctx):
     aww = await kclient.images.random_aww()
     await ctx.send(aww.image_url)
+          
           
 @client.group()
 async def gd(ctx):
