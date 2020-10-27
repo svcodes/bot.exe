@@ -67,7 +67,7 @@ async def hystats(ctx,mcuser):
 async def aww(ctx):
     headers = {"Authorization" : "Bearer 695cb5adaf19999c1e66774ea03d241fe4f6a3ee", "Accept" : "application/json"}
     async with client.session.get(url="https://api.ksoft.si/images/random-aww/", headers=headers) as r:
-        data = await r.json()
+        data = await r.text()
         await ctx.send(data['image_url'])
           
 @client.group()
