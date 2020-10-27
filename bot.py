@@ -24,7 +24,7 @@ kclient = ksoftapi.Client("695cb5adaf19999c1e66774ea03d241fe4f6a3ee")
 async def on_message(message):
    if message.guild.id == 733508936216477706 and "bye" in message.content.lower():
       await message.add_reaction("\U0001f44b")
-   if message.author.id == 743162094710423572:
+   if message.author.id == 743162094710423572 and not message.channel.id == 770073072153133076:
       await message.add_reaction("\U0001f60b")
    if message.author.id == 348149669899272196 and "." in message.content.lower():
       await message.add_reaction("\U0001f633")
