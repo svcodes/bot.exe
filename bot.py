@@ -65,6 +65,12 @@ async def hystats(ctx,mcuser):
 
 @client.command()
 async def aww(ctx):
+    async with client.session.get(url="https://reddit.com/r/aww/random.json") as r:
+        data = await r.json()
+        await ctx.send(data[0]['data']['children'][0]['data']['url_overridden_by_dest'])
+          
+@client.command()
+async def awew(ctx):
     headers = {"Authorization" : "Bearer 695cb5adaf19999c1e66774ea03d241fe4f6a3ee", "Accept" : "application/json"}
     async with client.session.get(url="https://api.ksoft.si/images/random-aww/", headers=headers) as r:
         data = await r.text()
