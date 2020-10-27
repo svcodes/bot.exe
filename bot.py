@@ -71,10 +71,8 @@ async def aww(ctx):
           
 @client.command()
 async def awew(ctx):
-    # headers = {"Authorization" : "Bearer 695cb5adaf19999c1e66774ea03d241fe4f6a3ee"}
-    async with client.session.get(url="https://api.ksoft.si/images/random-aww/") as r:
-        data = await r.json()
-        await ctx.send(data['image_url'])
+    aww = await kclient.images.random_aww()
+    await ctx.send(aww.image_url)
           
 @client.group()
 async def gd(ctx):
