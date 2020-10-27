@@ -26,7 +26,7 @@ async def on_message(message):
       await message.add_reaction("\U0001f44b")
    if message.author.id == 743162094710423572 and not message.channel.id == 770073072153133076:
       await message.add_reaction("\U0001f60b")
-   if message.author.id == 348149669899272196 and "." in message.content.lower():
+   if message.author.id == 348149669899272196 and "." in message.content.lower() and not message.channel.id == 770073072153133076:
       await message.add_reaction("\U0001f633")
    if message.guild.id == 693891574609739777 and message.channel.id == 740011566501724171 and message.author.id == 155149108183695360:
       await message.add_reaction("\U00002b06")
