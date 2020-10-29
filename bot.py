@@ -5,6 +5,7 @@ import aiohttp
 import asyncpraw
 import random
 import ksoftapi
+import time
 
 #initialize stuff
 intents = discord.Intents.default()
@@ -32,7 +33,9 @@ async def on_message(message):
       await message.add_reaction("\U00002b06")
       await message.add_reaction("\U00002b07")
    if message.author.id == 690721800836874300:
-      await message.channel.send("<@746113795071541469> there is a message star it")
+      if (not stamp - time.time() <= 5):  
+        await message.channel.send("<@746113795071541469> there is a message star it")
+        stamp = time.time()
    
    await client.process_commands(message)
 
