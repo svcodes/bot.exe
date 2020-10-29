@@ -8,6 +8,7 @@ import ksoftapi
 import time
 
 #initialize stuff
+stamp = time.time()
 intents = discord.Intents.default()
 intents.members = True
 client = commands.Bot(command_prefix = ".", intents = intents)
