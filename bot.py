@@ -31,6 +31,8 @@ async def on_message(message):
    if message.guild.id == 693891574609739777 and message.channel.id == 740011566501724171 and message.author.id == 155149108183695360:
       await message.add_reaction("\U00002b06")
       await message.add_reaction("\U00002b07")
+   if message.author.id == 690721800836874300:
+      await message.channel.send("<@746113795071541469> there is a message star it")
    
    await client.process_commands(message)
 
