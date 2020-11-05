@@ -8,7 +8,6 @@ import ksoftapi
 import time
 
 #initialize stuff
-stamp = time.time()
 intents = discord.Intents.default()
 intents.members = True
 client = commands.Bot(command_prefix = ".", intents = intents)
@@ -33,10 +32,6 @@ async def on_message(message):
    if message.guild.id == 693891574609739777 and message.channel.id == 740011566501724171 and message.author.id == 155149108183695360:
       await message.add_reaction("\U00002b06")
       await message.add_reaction("\U00002b07")
-   if message.author.id == 690721800836874300:
-      if (not stamp - time.time() <= 5):  
-        await message.channel.send("<@746113795071541469> there is a message star it")
-        stamp = time.time()
    
    await client.process_commands(message)
 
