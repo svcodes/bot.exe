@@ -57,7 +57,11 @@ async def suggest(ctx,*,suggestion):
   else:
       await ctx.send("no")
     
-    
+@client.command()
+async def chatbot(ctx,msg: str):
+    async with client.session.get(f"https://some-random-api.ml/chatbot?message={msg}") as r:
+       res = await r.json()
+       await ctx.send(res['response']
 @client.command()
 async def hystats(ctx,mcuser):
         async with client.session.get(f'https://api.slothpixel.me/api/players/{mcuser}') as r:
