@@ -22,7 +22,7 @@ kclient = ksoftapi.Client("695cb5adaf19999c1e66774ea03d241fe4f6a3ee")
 
 @client.command()
 async def gay(ctx):
-    async with client.session.get(f"https://some-random-api.ml/canvas/gay?avatar={str(ctx.author.avatar_url_as(format="png",static_format="png")}") as r:
+    async with client.session.get(f"https://some-random-api.ml/canvas/gay?avatar={str(ctx.author.avatar_url_as(format="png")}") as r:
        #res = await r.json()
        await ctx.send(r)
 
