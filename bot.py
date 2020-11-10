@@ -29,7 +29,7 @@ async def gay(ctx):
 """
 
 @client.command()
-async def weather(ctx,loc):
+async def weather(ctx,*, loc):
     await ctx.send(f"https://wttr.in/{loc}.png?u")
 
 @client.event
