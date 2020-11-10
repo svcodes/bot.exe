@@ -28,6 +28,10 @@ async def gay(ctx):
        await ctx.send(r)
 """
 
+@client.command()
+async def weather(ctx,loc):
+    await ctx.send(f"https://wttr.in/{loc}.png?u")
+
 @client.event
 async def on_message(message):
    if message.guild.id == 733508936216477706 and "bye" in message.content.lower():
