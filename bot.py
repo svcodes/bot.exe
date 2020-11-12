@@ -29,7 +29,7 @@ async def gay(ctx):
 """
 
 @client.command()
-async def weather(ctx,*, loc):
+async def weather(ctx, loc):
     await ctx.send(f"https://wttr.in/{loc}.png?u")
 
 @client.event
@@ -69,7 +69,7 @@ async def suggest(ctx,*,suggestion):
       await ctx.send("no")
     
 @client.command()
-async def chatbot(ctx,msg: str):
+async def chatbot(ctx,*, msg: str):
     async with client.session.get(f"https://some-random-api.ml/chatbot?message={msg}") as r:
        res = await r.json()
        await ctx.send(res['response'])
