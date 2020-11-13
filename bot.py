@@ -35,6 +35,14 @@ async def slowmode(ctx, secs: int):
     await ctx.send(f"Slowmode set to {secs} seconds") 
 
 
+    
+@commands.has_permissions(manage_messages=True)
+@client.command()
+async def 6hrs(ctx):
+    await ctx.channel.edit(slowmode_delay=21600)
+    await ctx.send(f"Slowmode set to 6 hours :)") 
+
+
 @client.command()
 async def lyrics(ctx, *,query):
     try:
