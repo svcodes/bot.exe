@@ -37,8 +37,8 @@ async def slowmode(ctx, secs: int):
 
     
 @commands.has_permissions(manage_messages=True)
-@client.command()
-async def 6hrs(ctx):
+@client.command(name="6hrs")
+async def sixhrs(ctx):
     await ctx.channel.edit(slowmode_delay=21600)
     await ctx.send(f"Slowmode set to 6 hours :)") 
 
