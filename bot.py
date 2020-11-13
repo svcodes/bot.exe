@@ -38,6 +38,7 @@ async def lyrics(ctx, query):
     else:
         first = results[0]
         embed = discord.Embed(title = f"Lyrics for {first.name} by {first.artist}", description=first.lyrics)
+        embed.set_footer("Lyrics provided by KSoft.Si")
         await ctx.send(embed=embed)
 
 @client.command()
