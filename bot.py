@@ -29,7 +29,7 @@ async def gay(ctx):
 """
 
 @commands.has_permissions(manage_messages=True)
-@client.command()
+@client.command(help = "sets slowmode. Usage: .slowmode <seconds>")
 async def slowmode(ctx, secs: int):
     await ctx.channel.edit(slowmode_delay=secs)
     await ctx.send(f"Slowmode set to {secs} seconds") 
