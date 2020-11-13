@@ -28,6 +28,18 @@ async def gay(ctx):
        await ctx.send(r)
 """
 
+
+@client.command()
+async def lyrics(ctx, query):
+    try:
+        results = await kclient.music.lyrics(query=query,clean_up=True)
+    except ksoftapi.NoResults:
+        await ctx.send('No lyrics found for ' + query)
+    else:
+        first = results[0]
+        embed = discord.Embed(title = f"Lyrics for {first.name} by {first.artist}", description=first.lyrics)
+        await ctx.send(embed=embed)
+
 @client.command()
 async def weather(ctx, loc):
     await ctx.send(f"https://wttr.in/{loc}.png?u")
