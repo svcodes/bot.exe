@@ -243,6 +243,14 @@ async def gm(ctx, user : discord.Member = None):
     await ctx.send(f"{ctx.author.name} says good morning to {user.name}")
 
 
+@client.command()
+async def ga(ctx, user : discord.Member = None):
+  if user == None:
+    await ctx.send(f"{ctx.author.name} says good afternoon")
+  else:
+    await ctx.send(f"{ctx.author.name} says good afternoon to {user.name}")
+
+
 
 
 #uses my api key to run the code and start sending it over to discord
