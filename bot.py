@@ -36,7 +36,7 @@ async def slowmode(ctx, secs: int):
 
 
 @client.command()
-async def lyrics(ctx, query):
+async def lyrics(ctx, *,query):
     try:
         results = await kclient.music.lyrics(query=query,clean_up=True)
     except ksoftapi.NoResults:
