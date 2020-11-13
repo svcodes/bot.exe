@@ -28,6 +28,12 @@ async def gay(ctx):
        await ctx.send(r)
 """
 
+@commands.has_permissions(manage_messages=True)
+@client.command()
+async def slowmode(ctx, secs: int):
+    await ctx.channel.slowmode_delay(secs)
+    await ctx.send(f"Slowmode set to {secs} seconds") 
+
 
 @client.command()
 async def lyrics(ctx, query):
