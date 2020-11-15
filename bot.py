@@ -33,13 +33,21 @@ async def gay(ctx):
 
 
 @client.command()
-async def join(ctx):
+async def rickroll(ctx):
     await ctx.author.voice.channel.connect() #Joins author's voice channel
+    player = music.get_player(guild_id=ctx.guild.id)
+    if not player:
+        player = music.create_player(ctx, ffmpeg_error_betterfix=True)
+    if not ctx.voice_client.is_playing():
+        await player.queue("https://www.youtube.com/watch?v=dQw4w9WgXcQ")
+        song = await player.play()
+        await ctx.send(f"Playing rickroll")
     
+
 @client.command()
 async def leave(ctx):
     await ctx.voice_client.disconnect()
-    
+"""
 @client.command()
 async def play(ctx, *, url):
     player = music.get_player(guild_id=ctx.guild.id)
@@ -112,7 +120,7 @@ async def remove(ctx, index):
     song = await player.remove_from_queue(int(index))
     await ctx.send(f"Removed {song.name} from queue")
 
-
+"""
 
 
 
