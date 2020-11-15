@@ -148,7 +148,7 @@ async def lyrics(ctx, *,query):
 @client.command()
 async def weather(ctx, loc):
     await ctx.send(f"https://wttr.in/{loc}.png?u")
-
+"""
 @client.event
 async def on_message(message):
    if message.guild.id == 733508936216477706 and "bye" in message.content.lower():
@@ -162,7 +162,7 @@ async def on_message(message):
       await message.add_reaction("\U00002b07")
    
    await client.process_commands(message)
-
+"""
 @client.command()
 async def suggest(ctx,*,suggestion):
   
