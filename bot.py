@@ -12,13 +12,13 @@ intents = discord.Intents.default()
 intents.members = True
 client = commands.Bot(command_prefix = ".", intents = intents)
 
-reddit = asyncpraw.Reddit(client_id="CIwP1eILd2pKNA",
-                     client_secret="eEMVLkXCyLD4mXC9QHjDMIWedEI",
-                     user_agent="script: Python (by /u/thesumonster)")
+reddit = asyncpraw.Reddit(client_id="h",
+                     client_secret="h",
+                     user_agent="script: Python (by /u/h)")
 client.load_extension("jishaku")
 
 client.session = aiohttp.ClientSession()
-kclient = ksoftapi.Client("695cb5adaf19999c1e66774ea03d241fe4f6a3ee")
+kclient = ksoftapi.Client("h")
 """
 command not work too laz to fix
 @client.command()
@@ -259,5 +259,5 @@ async def ga(ctx, user : discord.Member = None):
 
 
 
-#uses my api key to run the code and start sending it over to discord
-client.run("NzQyODY1MjAyMzAyODEyMzIy.XzMVIQ.eS05opx4x5kVUkT02ownR74iBuQ")
+#uses my token to run the code and start sending it over to discord
+client.run("h")
